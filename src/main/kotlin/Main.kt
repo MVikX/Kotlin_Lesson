@@ -1,5 +1,6 @@
 package org.example
 
 fun main() {
-    println("Hello World!")
+    val lesson1 = lesson1_task1()
+    lesson1.print()
 }
