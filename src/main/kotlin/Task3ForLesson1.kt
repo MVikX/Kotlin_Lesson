@@ -1,19 +1,15 @@
 package org.example
 
+const val minInHour = 60
+
 fun main(){
 
     val travelTimeMinutes = 457
     val departureHour = 9
     val departureMin = 39
-    val minPerHour = 60
 
-    var arrivalHour = travelTimeMinutes / 60 + departureHour
-    var arrivalMin = travelTimeMinutes % 60 + departureMin
-
-    if (arrivalMin > minPerHour){
-        arrivalHour++
-        arrivalMin = arrivalMin - 60
-    }
+    val arrivalHour = (travelTimeMinutes + departureHour * minInHour + departureMin) / minInHour
+    val arrivalMin = (travelTimeMinutes + departureHour * minInHour + departureMin) % minInHour
 
     println("$arrivalHour:$arrivalMin")
 
